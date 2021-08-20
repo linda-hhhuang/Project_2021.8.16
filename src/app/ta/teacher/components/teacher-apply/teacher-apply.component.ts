@@ -60,10 +60,6 @@ export class TeacherApplyComponent implements OnInit {
   //查看申请信息
   showModalRequestInfo(e: Request) {
     console.log('in RequestInfo ', e);
-    // this.requestSrvc.getRequestInfo(rid).subscribe((v) => {
-    //   this.currentSelectedRequest = v.body;
-    //   this.isVisibleRequestInfo = true;
-    // });
     this.currentSelectedRequest = e;
     this.isVisibleRequestInfo = true;
   }

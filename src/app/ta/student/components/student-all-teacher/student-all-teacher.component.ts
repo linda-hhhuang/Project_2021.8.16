@@ -35,10 +35,6 @@ export class StudentAllTeacherComponent implements OnInit {
   //查看教师详细信息
   showModalShowInfo(e: any) {
     console.log('in ShowInfo ', e);
-    // this.memberSrvc.getTeacher(e.sid).subscribe((v) => {
-    //   this.currentSelectedTeacher = v.body;
-    //   this.isVisibleShowInfo = true;
-    // });
     this.currentSelectedTeacher = e;
     this.isVisibleShowInfo = true;
   }

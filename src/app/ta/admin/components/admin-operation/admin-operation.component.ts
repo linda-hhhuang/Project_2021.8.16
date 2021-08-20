@@ -43,10 +43,6 @@ export class AdminOperationComponent implements OnInit {
 
   showModalShowInfo(e: Request) {
     console.log('in ShowInfo ', e);
-    // this.requestSrvc.getRequestInfo(e.rid).subscribe((v) => {
-    //   this.currentSelectedRequest = v.body;
-    //   this.isVisibleShowInfo = true;
-    // });
     this.currentSelectedRequest = e;
     this.isVisibleShowInfo = true;
   }

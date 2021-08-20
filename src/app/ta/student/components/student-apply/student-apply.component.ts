@@ -39,15 +39,10 @@ export class StudentApplyComponent implements OnInit {
       this.searchStatusValue = 'false';
       this.searchStatus();
     });
-    // this.memberSrvc.currentStudent$.subscribe((student) => {
-    //   this.currentStudentInfo = student!;
-    // });
   }
 
   ngOnInit(): void {
     this.requestSrvc.getRequest().subscribe((v) => {
-      // this.requestList = v.body.Requests;
-      // this.currentDisplayRequestList = this.requestList;
       this.init();
     });
   }
@@ -68,10 +63,6 @@ export class StudentApplyComponent implements OnInit {
   //更新教师
   showModalPostAgreement(e: Request) {
     console.log('in PostAgreement ', e);
-    // this.requestSrvc.getRequestInfo(rid).subscribe((v) => {
-    //   this.currentSelectedRequest = v.body;
-    //   this.isVisiblePostAgreement = true;
-    // });
     this.resetTeacherName = e.manualTeacher;
     this.isVisiblePostAgreement = true;
   }
@@ -94,10 +85,6 @@ export class StudentApplyComponent implements OnInit {
   //查看毕业设计工作协议
   showModalShowAgreement(e: Request) {
     console.log('in ShowAgreement ', e);
-    // this.requestSrvc.getRequestInfo(rid).subscribe((v) => {
-    //   this.currentSelectedRequest = v.body;
-    //   this.isVisibleShowAgreement = true;
-    // });
     this.currentSelectedRequest = e;
     this.isVisibleShowAgreement = true;
   }

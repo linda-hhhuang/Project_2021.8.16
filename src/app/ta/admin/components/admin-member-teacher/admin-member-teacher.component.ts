@@ -39,10 +39,6 @@ export class AdminMemberTeacherComponent implements OnInit {
 
   showModalShowInfo(e: any) {
     console.log('in ShowInfo ', e);
-    // this.memberSrvc.getTeacher(e.sid).subscribe((v) => {
-    //   this.currentSelectedUser = v.body;
-    //   this.isVisibleShowInfo = true;
-    // });
     this.currentSelectedUser = e;
     this.isVisibleShowInfo = true;
   }
@@ -53,10 +49,6 @@ export class AdminMemberTeacherComponent implements OnInit {
 
   showModalResetInfo(e: any) {
     console.log('in resetRole ', e);
-    // this.memberSrvc.getTeacher(e.sid).subscribe((v) => {
-    //   this.currentSelectedUser = v.body;
-    //   this.isVisibleResetInfo = true;
-    // });
     this.currentSelectedUser = e;
     this.isVisibleResetInfo = true;
   }
