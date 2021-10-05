@@ -22,7 +22,6 @@ export class TeacherPersonalComponent implements OnInit {
   init() {
     this.memberSrvc.getTeacherInfo().subscribe((student) => {
       this.currentTeacherInfo = student.body;
-      console.log('in student-personal ngOnInit, data is ', student);
     });
   }
   ngOnInit(): void {
@@ -34,14 +33,13 @@ export class TeacherPersonalComponent implements OnInit {
     this.memberSrvc.currentTeacher$
       .pipe(filter((v) => v != null))
       .subscribe((v) => {
-        console.log('in showModalUpdateInfo', v);
         this.isVisibleUpdateInfo = true;
         this.currentTeacherInfo = v!;
       });
   }
   handleOkUpdateInfo(): void {
     this.isOkLoadingUpdateInfo = true;
-    console.log('in handleOkUpdateInfo, data is ', this.currentTeacherInfo);
+
     this.memberSrvc
       .updateTeacherInfo(this.currentTeacherInfo)
       .subscribe((response) => {
@@ -51,7 +49,6 @@ export class TeacherPersonalComponent implements OnInit {
       });
   }
   handleCancelUpdateInfo(): void {
-    console.log('Button cancel clicked!');
     this.isVisibleUpdateInfo = false;
   }
 }

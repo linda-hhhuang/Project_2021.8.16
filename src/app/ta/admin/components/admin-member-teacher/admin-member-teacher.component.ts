@@ -38,7 +38,6 @@ export class AdminMemberTeacherComponent implements OnInit {
   }
 
   showModalShowInfo(e: any) {
-    console.log('in ShowInfo ', e);
     this.currentSelectedUser = e;
     this.isVisibleShowInfo = true;
   }
@@ -48,7 +47,6 @@ export class AdminMemberTeacherComponent implements OnInit {
   }
 
   showModalResetInfo(e: any) {
-    console.log('in resetRole ', e);
     this.currentSelectedUser = e;
     this.isVisibleResetInfo = true;
   }

@@ -62,16 +62,12 @@ export class StudentApplyComponent implements OnInit {
 
   //更新教师
   showModalPostAgreement(e: Request) {
-    console.log('in PostAgreement ', e);
     this.resetTeacherName = e.manualTeacher;
     this.isVisiblePostAgreement = true;
   }
   handleOkPostAgreement(): void {
     this.isOkLoadingPostAgreement = true;
-    console.log(
-      'in student-apply handleOkPostAgreement',
-      this.currentSelectedRequest
-    );
+
     this.requestSrvc.updateRequest(this.resetTeacherName).subscribe(() => {
       this.isVisiblePostAgreement = false;
       this.message.success('更改校外教师姓名成功!');
@@ -84,7 +80,6 @@ export class StudentApplyComponent implements OnInit {
 
   //查看毕业设计工作协议
   showModalShowAgreement(e: Request) {
-    console.log('in ShowAgreement ', e);
     this.currentSelectedRequest = e;
     this.isVisibleShowAgreement = true;
   }

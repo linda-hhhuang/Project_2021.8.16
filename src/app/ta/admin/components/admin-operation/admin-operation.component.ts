@@ -28,9 +28,9 @@ export class AdminOperationComponent implements OnInit {
     private message: NzMessageService
   ) {}
 
+  //留个小坑,看要不要用obs来快速加载
   init() {
     this.requestSrvc.getRequest().subscribe((v) => {
-      console.log('in admin-operation ngoninit', v);
       this.currentDisplayRequestList = v.body;
       this.requestList = v.body;
       this.searchStatusValue = 'false';
@@ -42,7 +42,6 @@ export class AdminOperationComponent implements OnInit {
   }
 
   showModalShowInfo(e: Request) {
-    console.log('in ShowInfo ', e);
     this.currentSelectedRequest = e;
     this.isVisibleShowInfo = true;
   }

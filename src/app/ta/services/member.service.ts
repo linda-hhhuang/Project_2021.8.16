@@ -58,7 +58,6 @@ export class MemberService {
       tap({
         next: (response) => {
           this.userSrvc.memberInit().subscribe();
-          console.log('in member service deleteMember ok', response);
         },
         error: (err) => {
           this.handleError(err.error.msg);
@@ -74,7 +73,6 @@ export class MemberService {
         tap({
           next: (response) => {
             this.userSrvc.memberInit().subscribe();
-            console.log('in member service UpdataStudent ok', response);
           },
           error: (err) => {
             this.handleError(err.error.msg);
@@ -90,7 +88,6 @@ export class MemberService {
         tap({
           next: (response) => {
             this.userSrvc.memberInit().subscribe();
-            console.log('in member service UpdataTeacher ok', response);
           },
           error: (err) => {
             this.handleError(err.error.msg);
@@ -103,7 +100,6 @@ export class MemberService {
     return this.api.get<any>(`/member/student/${sid}`).pipe(
       tap({
         next: (response) => {
-          console.log('in member service getStudentInfo', response);
           this.currentStudent.next(response.body);
         },
         error: (err) => {
@@ -117,7 +113,6 @@ export class MemberService {
     return this.api.get<any>(`/member/teacher/${sid}`).pipe(
       tap({
         next: (response) => {
-          console.log('in member service getTeacherInfo', response);
           this.currentTeacher.next(response.body);
         },
         error: (err) => {
@@ -131,7 +126,6 @@ export class MemberService {
     return this.api.get<any>(`member/teacher/list`).pipe(
       tap({
         next: (response) => {
-          console.log('in member service getTeacherInfoList', response);
           this.teacherInfoList.next(response.body.teacherList);
         },
         error: (err) => {
@@ -146,7 +140,6 @@ export class MemberService {
     return this.api.get<any>('/member/student/me').pipe(
       tap({
         next: (response) => {
-          console.log('in member service getStudentInfo', response);
           this.currentStudent.next(response.body);
         },
         error: (err) => {
@@ -173,7 +166,6 @@ export class MemberService {
         tap({
           next: (response) => {
             this.getStudentInfo().subscribe();
-            console.log('in member service updateStudentInfo ok', response);
           },
           error: (err) => {
             this.handleError(err.error.msg);
@@ -187,7 +179,6 @@ export class MemberService {
     return this.api.get<any>('/member/teacher/me').pipe(
       tap({
         next: (response) => {
-          console.log('in member service getTeacherInfo', response);
           this.currentTeacher.next(response.body);
         },
         error: (err) => {
@@ -212,7 +203,6 @@ export class MemberService {
         tap({
           next: (response) => {
             this.getTeacherInfo().subscribe();
-            console.log('in member service updateTeacherInfo ok', response);
           },
           error: (err) => {
             this.handleError(err.error.msg);
